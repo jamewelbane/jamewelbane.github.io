@@ -1,0 +1,16 @@
+.icons-container {
+  display: flex;               /* Use flexbox for horizontal layout */
+  justify-content: center;     /* Center icons horizontally */
+  flex-wrap: wrap;            /* Allow icons to wrap on smaller screens */
+}
+
+.skill-icon {
+  font-size: 60px;            /* Icon size */
+  margin: 10px;               /* Space between icons */
+  color: #47455b;             /* Icon color */
+  transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.skill-icon:hover {
+  transform: scale(1.2);      /* Enlarge icon on hover */
+}

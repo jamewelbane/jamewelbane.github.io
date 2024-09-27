@@ -21,6 +21,9 @@
   <!-- modal project css -->
   <link rel="stylesheet" href="css/project-modal.css">
 
+  <!-- custom css -->
+  <link rel="stylesheet" href="css/custom.css">
+
   <!-- MAIN STYLE -->
   <link rel="stylesheet" href="css/tooplate-style.css">
 
@@ -202,6 +205,26 @@
 
 
   <div id="features"></div>
+
+
+    <!-- Skills -->
+    <section class="contact py-5" id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-12">
+            <div class="contact-form">
+              <h2 class="mb-4 text-center">Programming Languages</h2>
+              <div class="icons-container" id="skills-list">
+                <!-- Skills will be dynamically added here by JavaScript -->
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="skills"></div>
   <div id="footer"></div>
 
 
@@ -221,6 +244,8 @@
 
 
     loadHTML('public/features.html', 'features');
+
+    loadHTML('public/skills.html', 'skills');
 
     loadHTML('public/footer.html', 'footer');
   </script>
@@ -321,6 +346,11 @@
       </div>
     </div>
   </div>
+
+
+
+
+
 
 
   <!-- Modal 2 -->
@@ -519,6 +549,43 @@
       });
   });
 </script>
+
+<script>
+  // Array of programming languages with their corresponding Font Awesome icons
+const programmingLanguages = [
+  { name: "HTML", icon: "fab fa-html5" },
+  { name: "CSS", icon: "fab fa-css3-alt" },
+  { name: "JavaScript", icon: "fab fa-js" },
+  { name: "PHP", icon: "fab fa-php" },
+  { name: "SQL", icon: "fas fa-database" },
+  { name: "Laravel", icon: "fab fa-laravel" },
+  { name: "Bootstrap", icon: "fab fa-bootstrap" },
+  { name: "C++", icon: "fab fa-cuttlefish" },
+  { name: "VB.Net", icon: "fab fa-windows" } 
+];
+
+// Function to display the programming languages with icons in a horizontal layout
+function displaySkills() {
+  const skillsList = document.getElementById('skills-list');
+
+  programmingLanguages.forEach(skill => {
+    const iconContainer = document.createElement('div');
+    iconContainer.className = 'skill-icon';
+
+    // Create an icon element for Font Awesome
+    const icon = document.createElement('i');
+    icon.className = skill.icon; // Set the icon class for Font Awesome
+    iconContainer.appendChild(icon); // Append icon to container
+
+    skillsList.appendChild(iconContainer); // Append the container to the skills list
+  });
+}
+
+// Call the function when the page loads
+window.onload = displaySkills;
+
+</script>
+
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/popper.min.js"></script>
